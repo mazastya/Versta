@@ -1,9 +1,11 @@
+using Versta.Models;
+
 namespace Versta.Repositories.Interfaces
 {
     public interface IOrderRepository
     {
-        Task<IEnumerable<Models.Order>> GetAll();
-        Task AddOrder(Models.Order order);
-        void Update(Models.Order order);
+        Task<IEnumerable<Order>> GetAll();
+        Task AddOrder(Order order);
+        Task<Order> GetById(int id);
     }
 }

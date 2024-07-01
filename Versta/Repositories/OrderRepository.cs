@@ -13,11 +13,17 @@ public class OrderRepository(ApplicationDbContext context) : IOrderRepository
         await context.SaveChangesAsync();
     }
 
-    public async void Update(Order order)
+    public async Task<Order> GetById(int id)
     {
-        context.Order.Update(order);
-        await context.SaveChangesAsync();
+        return await context.Order.FindAsync(id);
     }
+
+    public async Task<Order> GetById(Order order)
+    {
+        return await context.Order.FindAsync(order.id);
+    }
+
+
 
     public async Task<IEnumerable<Order>> GetAll()
     {

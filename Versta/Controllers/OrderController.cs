@@ -16,6 +16,19 @@ namespace Versta.Controllers
             return View("GetAllOrders", order);
         }
 
+        [HttpGet]
+        public async Task<ViewResult> GetById(Order orderFind)
+        {
+            var order = await orderRepository.GetById(orderFind.id);
+        
+            return View("GetById", order);
+        }
+
+        public IActionResult GetById()
+        {
+            return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddOrder(Order order)
         {

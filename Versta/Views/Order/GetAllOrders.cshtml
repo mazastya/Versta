@@ -1,6 +1,6 @@
 @model IEnumerable<Versta.Models.Order>
 @{
-    ViewData["Title"] = "Get";
+    ViewData["Title"] = "GetAll";
 }
 
 <!DOCTYPE html>
@@ -36,7 +36,7 @@
     <table class="table">
         <thead>
         <tr>
-            <th>Номер заказа</th><th>Город отправителя</th><th>Адрес отправителя</th><th>Город получателя</th><th>Адрес получателя</th><th>Вес груза(кг)</th><th>Дата забора груза</th>
+            <th>Номер заказа</th><th>Город отправителя</th><th>Адрес отправителя</th><th>Город получателя</th><th>Адрес получателя</th><th>Вес груза(кг)</th><th>Дата забора груза</th><th>Детали заказа</th>
         </tr>
         </thead>
         <tbody>
@@ -50,6 +50,9 @@
                 <td>@item.AddressRecipient</td>
                 <td>@item.Weight</td>
                 <td>@item.DateTime</td>
+                <th>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="GetById" asp-route-id="@item.id">Подробнее</a>
+                </th>
             </tr>
         }
         </tbody>
