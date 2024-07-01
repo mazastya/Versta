@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Versta")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d789f5f0851e086f34de42940fd4b2343a23249")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d91f0b347db940cce319c1d0cdeeab3c60616ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Versta")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Versta")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
