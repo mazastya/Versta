@@ -1,0 +1,60 @@
+@model IEnumerable<Versta.Models.Order>
+@{
+    ViewData["Title"] = "Get";
+}
+
+<!DOCTYPE html>
+<style>
+    table {
+        width: 90%;
+        border-collapse: collapse;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:100px;
+    }
+
+    thead {
+        background: #adc5e1;
+        text-align: center;
+    }
+
+    tbody {
+        background: #fff;
+        text-align:center;
+    }
+    th, td {
+        padding: 5px;
+        border: 1px solid #000;
+    }
+</style>
+
+<html>
+<body>
+
+<form asp-controller="order" asp-action="GetAllOrders" method="get">
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Номер заказа</th><th>Город отправителя</th><th>Адрес отправителя</th><th>Город получателя</th><th>Адрес получателя</th><th>Вес груза(кг)</th><th>Дата забора груза</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.CitySender</td>
+                <td>@item.AddressSender</td>
+                <td>@item.CityRecipient</td>
+                <td>@item.AddressRecipient</td>
+                <td>@item.Weight</td>
+                <td>@item.DateTime</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</form>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+@model Versta.Models.Order
+@{
+    ViewData["Title"] = "AddOrder";
+}
+
+<!DOCTYPE html>
+<style>
+    .form-control {
+        width: 400px;
+        border: 1px solid #86b7fe;
+        display: block;
+        margin: 0 auto;
+    }
+    #btn {
+        border: 2px solid #9fc5fb;
+        background: #ffffff;
+        width: 175px;
+        height: 35px;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #btn:hover {
+        background: #9fc5fb;
+    }
+</style>
+
+
+<html>
+<body>
+<form method="post" asp-action="AddOrder" asp-controller="order" style="text-align: center; color: #000000;">
+
+    <p>
+        <label asp-for="CitySender" style="font-size: 16px;">Город отправителя</label><br/>
+        <input asp-for="CitySender" class="form-control" data-val="true" required size="20"/>
+    </p>
+    <p>
+        <label asp-for="AddressSender" style="font-size: 16px;">Адресс отправителя</label><br/>
+        <input asp-for="AddressSender" class="form-control" data-val="true" required size="20"/>
+    </p>
+    <p>
+        <label asp-for="CityRecipient" style="font-size: 16px;">Город получателяя</label><br/>
+        <input asp-for="CityRecipient" class="form-control" data-val="true" required size="20"/>
+    </p>
+    <p>
+        <label asp-for="AddressRecipient" style="font-size: 16px;">Адрес получателя</label><br/>
+        <input asp-for="AddressRecipient" class="form-control" data-val="true" required size="20"/>
+    </p>
+    <p>
+        <label asp-for="Weight" style="font-size: 16px;">Вес груза</label><br/>
+        <input asp-for="Weight" id="W" type="number" min="0" step="0.001" value="0" class="form-control" data-val="true" required size="10"/>
+    </p>
+    <p>
+        <label asp-for="DateTime" style="font-size: 16px;">Дата забора груза</label><br/>
+        <input asp-for="DateTime" class="form-control" data-val="true" required/>
+    </p>
+    <br/>
+    <p>
+        <input id="btn" type="submit" value="Отправить"/>
+    </p>
+</form>
+
+</body>
+</html>
