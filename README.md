@@ -29,7 +29,7 @@ CREATE TABLE [dbo].[Order](
 - ASP.NET 8
 - ASP.NET MVC
 - Entity Framework Core
-- Sql Server
+- SQL Server
   
 
 
